@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO -->
+  <title>CrescendoGreen | From Nursery to Landscape | East Africa</title>
+  <meta name="description" content="CrescendoGreen delivers high-quality seedling supply, planting, maintenance, and operational monitoring for nature-based restoration and carbon projects across East Africa.">
+  <meta name="keywords" content="tree nursery Kenya, dryland restoration, agroforestry, carbon projects Africa, seedling supply, landscape restoration">
+  <meta name="author" content="CrescendoGreen">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="CrescendoGreen | From Nursery to Landscape">
+  <meta property="og:description" content="Operational delivery for nature-based restoration projects in East Africa. Seedling supply, planting, maintenance & monitoring.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://CrescendoGreen">
+  <meta property="og:image" content="ASSETS/NurseryDroneView.mp4">
+  <meta property="og:site_name" content="CrescendoGreen">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CrescendoGreen | Plant-Based Solutions">
+  <meta name="twitter:description" content="High-quality seedling supply, planting and operational support for restoration projects across East Africa.">
+  <meta name="twitter:image" content="ASSETS/nurserydroneview.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<header>
+<!-- NAVBAR -->
+<nav class="bg-white/95 backdrop-blur-md border-b sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-4 mr-auto">
+  <img src="ASSETS/Crescendologo.png"
+     alt="Crescendo Green"
+     class="h-16 w-auto">
+</div>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <!-- About Dropdown -->
+      <div class="group relative">
+        <button class="nav-link flex items-center gap-1 hover:text-emerald-700 transition">
+          About
+          <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+        </button>
+        <div class="dropdown-menu absolute hidden group-hover:block pt-4">
+          <div class="bg-white shadow-xl rounded-2xl py-4 w-56 border border-emerald-100">
+            <a href="about.html" class="block px-6 py-3 hover:bg-emerald-50">Our Story</a>
+            <a href="about.html#team" class="block px-6 py-3 hover:bg-emerald-50">Our Team</a>
+			<a href="FAQ.html" class="block px-6 py-3 hover:bg-emerald-50">FAQs</a>
+            <a href="#kenya-operations" class="block px-6 py-3 hover:bg-emerald-50">Operations in Kenya</a>
+            <a href="#partners" class="block px-6 py-3 hover:bg-emerald-50">Partners</a>
+          </div>
+        </div>
+      </div>
+
+       <a href="services.html" class="nav-link">Services</a>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+
+      <!-- Impact Dropdown -->
+      <div class="group relative">
+        <button class="nav-link flex items-center gap-1 hover:text-emerald-700 transition">
+          Impact
+          <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+        </button>
+        <div class="dropdown-menu absolute hidden group-hover:block pt-4">
+          <div class="bg-white shadow-xl rounded-2xl py-4 w-56 border border-emerald-100">
+            <a href="about.html#stats" class="block px-6 py-3 hover:bg-emerald-50">Our Impact</a>
+            <a href="services.html#project" class="block px-6 py-3 hover:bg-emerald-50">Featured Projects</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="contact.html"
+   class="hidden md:block ml-10 bg-emerald-700 hover:bg-emerald-800 text-white px-6 py-5 rounded-full text-sm font-semibold transition">
+  Start a Project With Us
+</a>
+
+    <!-- Hamburger Button -->
+    <button id="hamburger" class="md:hidden text-3xl text-emerald-900 focus:outline-none">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- ====================== MOBILE MENU ====================== -->
+<div id="mobile-menu" class="fixed top-0 right-0 h-fit max-h-[85vh] w-72 bg-white shadow-2xl translate-x-full transition-transform duration-300 md:hidden z-[60] rounded-l-2xl overflow-hidden">
+
+  <div class="flex flex-col h-full">
+    <!-- Mobile Header -->
+    <div class="flex justify-end items-center px-6 pt-6 pb-4 border-b">
+      <button id="close-menu" class="text-3xl text-emerald-900 hover:text-emerald-700 transition">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Menu Links with Dropdowns -->
+    <div class="flex-1 overflow-y-auto px-6 py-8 space-y-2 text-lg font-semibold">
+
+      <!-- About Dropdown -->
+      <div class="mobile-dropdown">
+        <button class="w-full flex justify-between items-center py-3 text-left">
+          About
+          <i class="fa-solid fa-chevron-down text-sm transition-transform"></i>
+        </button>
+        <div class="mobile-dropdown-content hidden pl-6 space-y-3 text-base font-medium text-emerald-800">
+          <a href="about.html#our-story" class="block py-2">- Our Story</a>
+          <a href="about.html#team" class="block py-2">- Our Team</a>
+			<a href="FAQ.html" class="block px-6 py-3 hover:bg-emerald-50">FAQs</a>
+          <a href="#kenya-operations" class="block py-2">- Operations in Kenya</a>
+          <a href="#partners" class="block py-2">- Partners</a>
+        </div>
+      </div>
+
+      <a href="services.html" class="block py-3">Services</a>
+      <a href="gallery.html" class="block py-3">Gallery</a>
+      <a href="projects.html" class="block py-3">Projects</a>
+      <a href="blog.html" class="block py-3">Blog</a>
+
+      <!-- Impact Dropdown -->
+      <div class="mobile-dropdown">
+        <button class="w-full flex justify-between items-center py-3 text-left">
+          Impact
+          <i class="fa-solid fa-chevron-down text-sm transition-transform"></i>
+        </button>
+        <div class="mobile-dropdown-content hidden pl-6 space-y-3 text-base font-medium text-emerald-800">
+          <a href="about.html#stats" class="block py-2">- Our Impact</a>
+          <a href="projects.html" class="block py-2">- Featured Projects</a>
+          <a href="sustainability.html" class="block py-2">- Sustainability Reports</a>
+        </div>
+      </div>
+
+      <a href="contact.html" class="block py-3">Contact</a>
+    </div>
+
+    <!-- CTA Button -->
+
+  </div>
+</div>
+</header>
+
+
+<!-- Hero Section -->
+<section class="hero">
+  <!-- VIDEO -->
+    <video
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster="ASSETS/NurseryDroneView.webp">
+
+    <source src="ASSETS/NurseryDroneView.webm" type="video/webm">
+  </video>
+
+
+  <div class="overlay"></div>
+  
+  <div class="hero-content">
+    <div class="hero-tag">
+      Tree & plant propagation · Project development · Operational delivery
+    </div>
+
+    <h1>From Nursery to Landscape</h1>
+
+    <p>We deliver large-scale, reliable execution for plant-based projects across East Africa</p>
+
+    <!-- BUTTONS -->
+    <div class="hero-buttons">
+      <a href="services.html" class="btn-primary">Explore Services</a>
+      <a href="contact.html" class="btn-secondary">Start a Project</a>
+    </div>
+  </div>
+</section>
+
+ 
+<!-- ================= WHAT WE DELIVER ================= -->
+<section class="services-preview" style="background: #EDE4D5;">
+  <div class="max-w-7xl mx-auto px-6">
+    
+    <!-- HEADER -->
+    <div class="services-header text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold" style="color: #0A5C3A;">
+        What We Deliver
+      </h2>
+      <p class="lead text-2xl mt-4" style="font-weight: bold; color: #dc6f44;">
+        Operational delivery you can fully outsource
+      </p>
+      <p class="subtitle max-w-2xl mx-auto mt-6 text-lg" style="color: #5C4634;">
+        We handle the heavy lifting on the ground so you can focus on finance, 
+        certification, stakeholder engagement and project development.
+      </p>
+    </div>
+
+      <!-- SERVICES GRID -->
+    <div class="services-grid">
+      
+      <a href="services.html#High-quality-seedlings" class="service-card">
+        <div class="image-wrapper">
+          <img src="ASSETS/moringa seedlings.webp" alt="Seedling Supply">
+        </div>
+        <h3>High Quality Seedlings</h3>
+      </a>
+
+      <a href="services.html#research" class="service-card">
+        <div class="image-wrapper">
+          <img src="ASSETS/research.webp" alt="Research & Innovation">
+        </div>
+        <h3>Research & Innovation</h3>
+      </a>
+
+      <a href="services.html#monitoring-operations" class="service-card">
+        <div class="image-wrapper">
+          <img src="ASSETS/Monitoring&Operations.jpeg" alt="Monitoring & Operations">
+        </div>
+        <h3>Monitoring & Operations</h3>
+      </a>
+
+    </div>
+
+
+    <!-- CTA -->
+    <div class="cta-inline mt-16 flex justify-center md:justify-end">
+      <a href="services.html" class="inline-flex items-center gap-3 group">
+        <span class="cta-text text-lg font-semibold" style="color: #0A5C3A;">Explore All Services</span>
+        <span class="cta-arrow text-2xl transition-transform group-hover:translate-x-2" style="color: #C26B4A;">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== NURSERY VIDEO + GALLERY SECTION ==================== -->
+<section class="nursery-video-section">
+  <div class="container">
+    
+    <div class="media-slider" id="mediaSlider">
+      
+      <!-- Video Slide -->
+      <div class="slide" data-type="video">
+        <div class="video-wrapper">
+          <img src="ASSETS/NurseryDroneView.webp" 
+               alt="ATC Mtwapa Nursery - Aerial view" 
+               class="video-poster">
+
+          <video 
+            id="nursery-video"
+            muted 
+            loop 
+            playsinline 
+            controls
+            preload="none"
+            aria-label="Drone view of ATC Mtwapa Nursery">
+            <source src="ASSETS/NurseryDroneView.webm" type="video/webm">
+            
+          </video>
+        </div>
+      </div>
+
+      <!-- Photo Slides -->
+      
+      <div class="slide" data-type="image">
+        <img src="ASSETS/nursery (2).jpeg" alt="ATC Mtwapa Nursery - Propagation area">
+      </div>
+		<div class="slide" data-type="image">
+        <img src="ASSETS/nurseryatnight.webp" alt="ATC Mtwapa Nursery - Seedling trays">
+      </div>
+
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="slider-dots" id="sliderDots"></div>
+
+    <div class="video-caption">
+      <p><strong>ATC Mtwapa Nursery</strong> — Premium seedlings &amp; professional propagation center in Mtwapa</p>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="clients">
+  <div class="container">
+    <h2 class="clients-title">Who We Work With</h2>
+      <p class="clients-subtitle">
+        We collaborate across multiple sectors to deliver forestry, restoration, and land development solutions.
+      </p>
+    </div>
+
+    <div class="clients-grid">
+      <div class="client-item">
+        <i class="fas fa-building"></i>
+        <span>Developers</span>
+      </div>
+      <div class="client-item">
+        <i class="fas fa-hands-holding-circle"></i>
+        <span>NGOs</span>
+      </div>
+      <div class="client-item">
+        <i class="fas fa-farm"></i>
+        <span>Farms &amp; Estates</span>
+      </div>
+      <div class="client-item">
+        <i class="fas fa-store"></i>
+        <span>Supermarkets &amp; Retail</span>
+      </div>
+      <div class="client-item">
+        <i class="fas fa-university"></i>
+        <span>Institutions &amp; Corporates</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CARBON -->
+<section class="carbon-section">
+  <!-- Background Image -->
+  <div class="carbon-bg">
+    <img src="ASSETS/loading.jpg" 
+         alt="Carbon Project Landscape - Reforestation in Africa"
+         loading="lazy">
+  </div>
+  
+  <!-- Dark Overlay -->
+  <div class="carbon-overlay"></div>
+
+  <div class="carbon-container">
+    <div class="carbon-grid">
+
+      <!-- Left Content -->
+      <div class="carbon-content">
+        <h2 class="carbon-title">
+          We Make Carbon Projects<br>
+          <span class="highlight">Actually Succeed</span>
+        </h2>
+        
+        <p class="carbon-subtitle">
+          Your trusted technical and operational partner for large-scale landscape carbon projects across Africa.
+        </p>
+        
+        <p class="carbon-features">
+          Reliable nurseries • Planting at scale • Long-term maintenance • Verified results
+        </p>
+
+        <a href="contact.html" class="carbon-cta">
+          Partner With Us
+        </a>
+      </div>
+
+      <!-- Right Highlights -->
+      <div class="carbon-highlights">
+        <div class="highlight-card">
+          <h3>Dryland Agroforestry &amp; Restoration</h3>
+          <p>Currently piloting a major project combining tree planting, assisted natural regeneration, and sustainable land use to restore ecosystems and deliver strong, verifiable carbon results.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- KENYA OPERATIONS -->
+<section class="kenya-operations" id="kenya-operations">
+  <div class="container">
+    
+    <div class="section-header">
+      <div class="line"></div>
+    <h2>Our Operations in Kenya</h2>
+    </div>
+
+    <div class="operations-grid">
+      
+      <!-- Locations -->
+      <div class="locations">
+        <div class="location-card">
+          <div class="icon">🌱</div>
+          <div class="content">
+            <h3>Mtwapa — Propagation Hub</h3>
+            <p>High-quality seedling production at scale. Our main nursery and propagation center.</p>
+          </div>
+        </div>
+
+        <div class="location-card">
+          <div class="icon">🧪</div>
+          <div class="content">
+            <h3>Kakuyuni — Experimental Farm</h3>
+            <p>Testing drought-resistant species and innovative growing systems.</p>
+          </div>
+        </div>
+
+        <div class="location-card">
+          <div class="icon">🌳</div>
+          <div class="content">
+            <h3>Koromi — Agroforestry Demo</h3>
+            <p>Scaling productive landscape restoration and carbon projects.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="map-wrapper">
+    <div id="map" class="map"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--  CTA-->
+
+<section class="relative overflow-hidden bg-[#0b120d] text-white py-16 md:py-20 lg:py-24">
+  
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img src="ASSETS/atnursery.webp"
+         alt="Seedlings Transport"
+         class="w-full h-full object-cover opacity-55 scale-105">
+  </div>
+
+  <!-- Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black via-black/30 to-transparent"></div>
+
+  <!-- Soft Green Glow -->
+  <div class="absolute -top-32 -left-20 w-[400px] h-[400px] bg-emerald-100/20 blur-3xl rounded-full hidden md:block"></div>
+
+  <!-- Content -->
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="max-w-2xl">
+
+      <!-- Tag -->
+      <p class="uppercase tracking-[0.35em] text-xs md:text-sm text-emerald-400 mb-5 md:mb-6">
+        Premium Seedlings & Plant Supply
+      </p>
+
+      <!-- Heading -->
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.05] md:leading-[0.95]">
+        Growing Green <br>
+        At Every Scale
+      </h2>
+
+      <!-- Description -->
+      <p class="mt-6 md:mt-8 text-base md:text-lg lg:text-xl text-slate-300 leading-relaxed max-w-xl">
+        From seedlings and ornamental plants to large-scale landscape supply,
+        we help bring healthy, thriving greenery into every environment.
+      </p>
+
+      <!-- Buttons -->
+      <div class="mt-10 md:mt-12 flex flex-col sm:flex-row gap-4">
+        
+        <a href="contact.html"
+           class="group inline-flex items-center justify-center gap-3 bg-white text-black px-8 md:px-10 py-4 md:py-5 rounded-full text-base md:text-lg font-medium transition-all duration-300 hover:bg-emerald-100 hover:px-10 md:hover:px-12 active:scale-95">
+          Request Plants
+          <span class="transition-transform duration-300 group-hover:translate-x-1 text-xl">→</span>
+        </a>
+
+        <a href="services.html"
+           class="inline-flex items-center justify-center px-8 md:px-10 py-4 md:py-5 rounded-full border border-white/30 text-white text-base md:text-lg hover:bg-white/10 transition-all duration-300 active:scale-95">
+          Explore Nursery Services
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!--  OUR PARTNERS -->
+
+<section class="partners-section" id="partners">
+  <div class="">
+
+    <!-- TITLE -->
+    <div class="partners-header">
+     <h2>Partners</h2>
+    <p class="partners-sub">
+      Trusted by organizations driving restoration, climate resilience, and community impact
+      </p> 
+    </div>
+
+    <!-- LOGO MARQUEE CARD -->
+    <div class="partners-card">
+
+      <div class="marquee">
+
+        <div class="marquee-track">
+
+          <!-- logos -->
+          <div class="logo"><img src="ASSETS/GROWPACT-1.png"></div>
+          <div class="logo"><img src="ASSETS/acaciawaterlogo.png"></div>
+          <div class="logo"><img src="ASSETS/nature-kenya-logo.png"></div>
+          <div class="logo"><img src="ASSETS/kefri_logo.png"></div>
+          <div class="logo"><img src="ASSETS/logo (1).png"></div>
+          <div class="logo"><img src="ASSETS/kalro-logo.png"></div>
+          <div class="logo"><img src="ASSETS/kenyaforest.png"></div>
+        
+
+          <!-- duplicate for loop -->
+         <div class="logo"><img src="ASSETS/GROWPACT-1.png"></div>
+          <div class="logo"><img src="ASSETS/acaciawaterlogo.png"></div>
+          <div class="logo"><img src="ASSETS/nature-kenya-logo.png"></div>
+          <div class="logo"><img src="ASSETS/kefri_logo.png"></div>
+          <div class="logo"><img src="ASSETS/logo (1).png"></div>
+          <div class="logo"><img src="ASSETS/kalro-logo.png"></div>
+          <div class="logo"><img src="ASSETS/kenyaforest.png"></div>
+        
+
+
+      </div>
+
+    </div>
+
+    <!-- TAGLINE -->
+    <div class="partners-footer">
+      <p>
+        Working with organizations committed to transparency, restoration, plant-based projects.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<a href="https://wa.me/254725707814?text=Hello%20Crescendo.green%20team%2C%20I%20have%20an%20inquiry"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+<script src="script.js"></script>
+<div id="footer"></div>
+
+<script>
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer').innerHTML = data;
+  });
+</script>
+
+<script>
+// Highlight target section when coming from another page
+document.addEventListener("DOMContentLoaded", () => {
+  const hash = window.location.hash;
+  
+  if (hash) {
+    const targetSection = document.querySelector(hash);
+    if (targetSection) {
+      // Smooth scroll to section
+      targetSection.scrollIntoView({ 
+        behavior: "smooth",
+        block: "center"
+      });
+
+      // Add highlight effect
+      targetSection.classList.add("highlight-section");
+      
+      // Remove highlight after 3 seconds
+      setTimeout(() => {
+        targetSection.classList.remove("highlight-section");
+      }, 3000);
+    }
+  }
+});
+</script>
+
+<!-- Leaflet Map Script -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.getElementById('mediaSlider');
+  const slides = document.querySelectorAll('.slide');
+  const dotsContainer = document.getElementById('sliderDots');
+  const video = document.getElementById('nursery-video');
+  const poster = document.querySelector('.video-poster');
+
+  let currentIndex = 0;
+  let autoplayInterval;
+  const autoplayDelay = 5000; // 5 seconds per slide
+
+  // Create Dots
+  function createDots() {
+    dotsContainer.innerHTML = '';
+    slides.forEach((_, index) => {
+      const dot = document.createElement('span');
+      dot.addEventListener('click', () => {
+        goToSlide(index);
+      });
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  function updateDots() {
+    const dots = dotsContainer.querySelectorAll('span');
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
+    });
+  }
+
+  function goToSlide(index) {
+    currentIndex = index;
+    slider.scrollTo({
+      left: currentIndex * slider.offsetWidth,
+      behavior: 'smooth'
+    });
+    updateDots();
+    resetAutoplay();
+  }
+
+  // Auto Play Function
+  function startAutoplay() {
+    autoplayInterval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      goToSlide(currentIndex);
+    }, autoplayDelay);
+  }
+
+  function resetAutoplay() {
+    clearInterval(autoplayInterval);
+    startAutoplay();
+  }
+
+  // Pause autoplay when hovering
+  slider.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+  slider.addEventListener('mouseleave', () => {
+    if (!video || video.paused) startAutoplay();
+  });
+
+  // Initialize
+  createDots();
+  updateDots();
+  startAutoplay();
+
+  // Scroll listener to sync current index
+  slider.addEventListener('scroll', () => {
+    const scrollPosition = slider.scrollLeft + slider.offsetWidth / 2;
+    slides.forEach((slide, index) => {
+      if (slidej.offsetLeft <= scrollPosition) {
+        if (currentIndex !== index) {
+          currentIndex = index;
+          updateDots();
+        }
+      }
+    });
+  });
+
+  // Video Lazy Loading + Pause Autoplay when video plays
+  if (video) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.load();
+          // Autoplay video only on its slide
+          setTimeout(() => {
+            if (currentIndex === 0) video.play().catch(() => {});
+          }, 800);
+
+          if (poster) {
+            poster.style.opacity = '0';
+            setTimeout(() => poster.style.display = 'none', 800);
+          }
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(slider);
+  }
+});
+</script>
+<script>
+// Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-menu');
+    const mobileDropdowns = document.querySelectorAll('.mobile-dropdown');
+
+    // Open menu
+    if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenu.classList.add('translate-x-0');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+    }
+
+    // Close menu
+    if (closeMenu && mobileMenu) {
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenu.classList.remove('translate-x-0');
+            document.body.style.overflow = 'visible';
+        });
+    }
+
+    // Close menu when clicking a link
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenu.classList.remove('translate-x-0');
+            document.body.style.overflow = 'visible';
+        });
+    });
+
+    // Mobile Dropdowns (About & Impact)
+    mobileDropdowns.forEach(dropdown => {
+        const button = dropdown.querySelector('button');
+        const content = dropdown.querySelector('.mobile-dropdown-content');
+
+        if (button && content) {
+            button.addEventListener('click', () => {
+                content.classList.toggle('hidden');
+                const icon = button.querySelector('i');
+                if (icon) icon.classList.toggle('rotate-180');
+            });
+        }
+    });
+});
+</script>
+<script>
+// ==================== AUTO ACTIVE NAVIGATION ====================
+document.addEventListener('DOMContentLoaded', () => {
+    
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    
+    // Desktop Navigation
+    const desktopLinks = document.querySelectorAll('.hidden.md\\:flex a.nav-link, .hidden.md\\:flex .nav-link');
+    
+    desktopLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href) {
+            const linkPage = href.split("/").pop();
+            
+            if (linkPage === currentPage || 
+                (currentPage === "" && linkPage === "index.html") ||
+                (currentPage === "index.html" && linkPage === "")) {
+                link.classList.add('active');
+            }
+        }
+    });
+
+    // Mobile Navigation
+    const mobileLinks = document.querySelectorAll('#mobile-menu a');
+    
+    mobileLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href) {
+            const linkPage = href.split("/").pop();
+            
+            if (linkPage === currentPage || 
+                (currentPage === "" && linkPage === "index.html") ||
+                (currentPage === "index.html" && linkPage === "")) {
+                link.classList.add('active');
+            }
+        }
+    });
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>El Niño 2026: Let’s Get Ready to Plant! 🌱</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Satoshi:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <style>
+    :root{
+      --primary: #2e7d32;
+      --primary-dark: #1e5a24;
+      --light-green: #a7d8b0;
+      --cream: #f8f4eb;
+      --beige: #fefce8;
+      --text: #1e2937;
+      --soft: #475569;
+    }
+
+    *{ margin:0; padding:0; box-sizing:border-box; }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background: linear-gradient(to bottom, #f1f8f3, #fefce8);
+      color:var(--text);
+      line-height:1.9;
+    }
+
+    .article-container{
+      max-width:920px;
+      margin:60px auto 100px;
+      background:white;
+      border-radius:40px;
+      overflow:hidden;
+      box-shadow:0 20px 60px rgba(46,125,50,.15);
+      border:3px solid var(--light-green);
+    }
+
+    /* Progress Bar */
+    .progress-bar{
+      position:fixed;
+      top:0; left:0;
+      height:6px;
+      width:0%;
+      background:linear-gradient(to right, var(--primary), #4ade80);
+      z-index:9999;
+    }
+
+    /* Close Button */
+    .close-btn {
+      position: fixed;
+      top: 22px;
+      right: 22px;
+      width: 52px;
+      height: 52px;
+      background: white;
+      border: 2px solid var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.4rem;
+      z-index: 10000;
+      box-shadow: 0 8px 25px rgba(46,125,50,.2);
+      transition: all 0.3s ease;
+    }
+    .close-btn:hover {
+      transform: rotate(90deg) scale(1.15);
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Hero */
+    .hero{
+      min-height:520px;
+      background: linear-gradient(rgba(30,90,36,.65), rgba(30,90,36,.75)),
+                  url('ASSETS/Malia.jpeg') center/cover no-repeat;
+      display:flex;
+      align-items:flex-end;
+      padding:80px 8%;
+      position:relative;
+    }
+
+    .hero-content h1{
+      font-family:'Satoshi',serif;
+      font-size:clamp(2.6rem,6vw,4.6rem);
+      line-height:1.1;
+      color:white;
+      text-shadow:0 6px 25px rgba(0,0,0,.45);
+      margin-bottom:20px;
+    }
+
+    .hero-tag{
+      display:inline-block;
+      padding:8px 22px;
+      background:rgba(255,255,255,.28);
+      backdrop-filter:blur(12px);
+      border-radius:50px;
+      color:white;
+      font-size:1.05rem;
+      font-weight:600;
+    }
+
+    /* Content */
+    .content-wrapper{ padding:70px 9%; }
+
+    .article-content{
+      font-size:1.13rem;
+      color:var(--text);
+    }
+
+    h2{
+      font-family:'Satoshi',serif;
+      color:var(--primary-dark);
+      margin:60px 0 24px;
+      font-size:2.2rem;
+    }
+
+    .card{
+      background:linear-gradient(135deg, #f0f9f0, #fefce8);
+      border:2px solid var(--light-green);
+      padding:32px;
+      border-radius:28px;
+      margin:40px 0;
+      box-shadow:0 15px 30px rgba(46,125,50,.1);
+      text-align:center;
+      font-size:1.2rem;
+      font-weight:600;
+      color:var(--primary-dark);
+    }
+
+    /* Stats */
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:24px;
+      margin:60px 0;
+    }
+
+    .stat-card{
+      background:white;
+      border:2px solid var(--light-green);
+      border-radius:28px;
+      padding:32px 20px;
+      text-align:center;
+      box-shadow:0 15px 35px rgba(46,125,50,.1);
+      transition: transform 0.3s;
+    }
+    .stat-card:hover{
+      transform: translateY(-10px) scale(1.04);
+    }
+    .stat-card h3{
+      font-size:2.9rem;
+      color:var(--primary);
+      margin-bottom:8px;
+    }
+
+    /* Quote */
+    .quote{
+      margin:70px 0;
+      padding:50px 40px;
+      background:linear-gradient(135deg, #f0f9f0, #f8f4eb);
+      border-radius:32px;
+      border-left:8px solid var(--primary);
+      font-size:1.35rem;
+      font-style:italic;
+      position:relative;
+    }
+    .quote::before{
+      content:"🌱";
+      font-size:4rem;
+      position:absolute;
+      top:-25px;
+      left:35px;
+      opacity:0.15;
+    }
+
+    /* Final CTA */
+    .final-cta{
+      text-align:center;
+      margin:80px 0;
+      padding:65px 40px;
+      background:linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-radius:36px;
+      color:white;
+      box-shadow:0 20px 50px rgba(46,125,50,.35);
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 28px;
+      background: white;
+      color: var(--primary-dark);
+      padding: 18px 42px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      box-shadow: 0 12px 30px rgba(46,125,50,.3);
+      transition: all 0.4s;
+    }
+    .cta-button:hover {
+      transform: translateY(-8px) scale(1.08);
+      box-shadow: 0 20px 40px rgba(46,125,50,.4);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="progress-bar" id="progressBar"></div>
+
+  <a href="javascript:history.back()" class="close-btn" aria-label="Close">
+    <i class="fa-solid fa-xmark"></i>
+  </a>
+
+  <div class="article-container">
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-tag">🌧️🌱 Climate • Restoration • Kenya</div>
+        <h1>El Niño 2026:<br>Let’s Get Ready to Plant Lots of Trees! 🌳💚</h1>
+      </div>
+    </section>
+
+    <div class="content-wrapper">
+      <div class="article-content">
+
+        <p>Hey friends! 🌈 Climate experts are feeling pretty confident that <strong>El Niño</strong> is coming in 2026 — and that means <strong>good rains</strong> for Kenya!</p>
+
+        <p>This is our chance to grow <em>lots</em> of happy little trees. But we have to get ready now~</p>
+
+        <div class="card">
+          🌱 The best planting seasons are prepared with love <strong>before</strong> the rain starts!
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>82%</h3>
+            <p>Chance of El Niño in 2026</p>
+          </div>
+          <div class="stat-card">
+            <h3>2×</h3>
+            <p>More baby trees survive with good prep!</p>
+          </div>
+          <div class="stat-card">
+            <h3>2026</h3>
+            <p>Could be our best planting year ever 🌟</p>
+          </div>
+        </div>
+
+        <h2>Let’s Make This Season Super Successful! ✨</h2>
+        <ul>
+          <li>🌱 Book nursery space early</li>
+          <li>🌱 Choose strong, healthy seeds</li>
+          <li>🌱 Plan transport & happy planting teams</li>
+          <li>🌱 Prepare aftercare (water + love)</li>
+        </ul>
+
+        <h2>Quality Seedlings = Happy Trees</h2>
+        <p>At <strong>Crescendo Green</strong>, we grow strong, tough little seedlings that are ready to thrive in the real world.</p>
+
+        <div class="quote">
+          A good rainy season is a gift — but only if our seedlings are ready to dance in the rain! 
+        </div>
+
+        <div class="final-cta">
+          <h3>Ready to make 2026 our greenest year yet? 🌍💚</h3>
+          <p><strong>Secure strong seedlings + expert support now!</strong></p>
+          <a href="contact.html" class="cta-button">
+            Yes! Let’s Prepare for El Niño 2026 →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener("scroll", () => {
+      const scrollTop = document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = (scrollTop / scrollHeight) * 100;
+      document.getElementById("progressBar").style.width = progress + "%";
+    });
+  </script>
+</body> 
+</html>

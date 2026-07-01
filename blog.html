@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crescendo Insights</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Inter', sans-serif;
+      background:#f8fff4;
+      color:#2c3e1e;
+      overflow-x:hidden;
+      line-height:1.7;
+    }
+
+    a{ text-decoration:none; color:inherit; }
+
+    img{
+      width:100%;
+      display:block;
+      height:auto;
+      border-radius: 24px;
+    }
+
+    /* ================= HERO ================= */
+    .hero{
+      min-height: 420px;
+      position:relative;
+      display:flex;
+      align-items:center;
+      padding:160px 7% 100px;
+      overflow:hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      filter: brightness(1.1);
+    }
+
+    .overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(44,62,30,0.45), rgba(44,62,30,0.65));
+      z-index:2;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:3;
+      max-width:760px;
+    }
+
+    .hero-tag{
+      color:#b5d66f;
+      background:rgba(181,214,111,0.2);
+      padding:6px 18px;
+      border-radius:50px;
+      display:inline-block;
+      margin-bottom:20px;
+      font-size:0.95rem;
+      letter-spacing:2px;
+      font-weight:600;
+    }
+
+    .hero h1{
+      font-size:clamp(3.4rem, 8.5vw, 6.8rem);
+      line-height:0.95;
+      margin-bottom:28px;
+      font-weight:700;
+      color:white;
+    }
+
+    .hero p{
+      color:#e8f0d8;
+      font-size:1.15rem;
+      max-width:580px;
+    }
+
+    /* ================= FEATURED ================= */
+    .featured{
+      padding:90px 7% 70px;
+      background:#e8f4d8;
+    }
+
+    .featured-content{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+      max-width:1400px;
+      margin:auto;
+    }
+
+    .featured-image{
+      border-radius:32px;
+      overflow:hidden;
+      box-shadow:0 25px 50px -12px rgba(143,174,69,0.3);
+    }
+
+    .featured-text h2{
+      font-size:clamp(2.5rem, 5vw, 3.4rem);
+      line-height:1.1;
+      margin-bottom:24px;
+      color:#2c3e1e;
+    }
+
+    .featured-meta{
+      display:flex;
+      gap:20px;
+      color:#5f7a2f;
+      margin-bottom:24px;
+      font-size:1rem;
+    }
+
+    .featured p{
+      color:#3f4a2e;
+      line-height:1.8;
+      font-size:1.1rem;
+    }
+
+    /* ================= FILTERS ================= */
+    .filters{
+      padding:60px 7% 40px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+.categories{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+    .categories button{
+      background:white;
+      border:2px solid #d1e8b8;
+      color:#3f4a2e;
+      padding:12px 24px;
+      border-radius:50px;
+      cursor:pointer;
+      transition:all .4s cubic-bezier(0.4, 0, 0.2, 1);
+      font-weight:500;
+    }
+
+    .categories button.active,
+    .categories button:hover{
+      background:#8fae45;
+      color:white;
+      border-color:#8fae45;
+      transform: translateY(-3px);
+    }
+.search-box{
+  background:#101010;
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:50px;
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:280px;
+  max-width:100%;
+}
+
+.search-box input{
+  background:transparent;
+  border:none;
+  outline:none;
+  color:white;
+  width:100%;
+}
+    /* Blog Grid */
+    .blog-grid {
+      padding: 20px 7% 120px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 36px;
+    }
+
+    .blog-card {
+      display: block;
+      background: white;
+      border: 2px solid #e8f4d8;
+      border-radius: 32px;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .blog-card:hover {
+      transform: translateY(-18px) scale(1.03);
+      border-color: #b5d66f;
+      box-shadow: 0 30px 60px rgba(143,174,69,0.25);
+    }
+
+    .blog-image {
+      height: 260px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .blog-image img {
+      transition: transform 0.8s ease;
+    }
+
+    .blog-card:hover img {
+      transform: scale(1.12);
+    }
+
+    .image-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: #b5d66f;
+      color: #2c3e1e;
+      font-size: 0.82rem;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(181,214,111,0.4);
+    }
+
+    .blog-content{
+      padding:28px;
+    }
+
+    .blog-meta{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      color:#b5d66f;
+      font-size:.9rem;
+      margin-bottom:22px;
+    }
+
+    .blog-content h2{
+      font-size:1.9rem;
+      line-height:1.2;
+      margin-bottom:16px;
+      color:#2c3e1e;
+    }
+
+    .blog-card:hover h2 {
+      color:#5f7a2f;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+    }
+
+    .save-btn {
+      position: relative;
+      z-index: 2;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #666;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .save-btn.saved {
+      color: #b5d66f;
+    }
+
+    .save-btn:hover {
+      color: #b5d66f;
+      transform: scale(1.2);
+    }
+
+    .read-btn{
+      color:#5f7a2f;
+      font-weight:600;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .read-btn:hover{
+      gap:14px;
+    }
+
+   
+
+    @media(max-width: 992px){
+      .nav-links{ display: none; }
+      .hamburger { display: block; color: #000; }
+      .featured-content{ grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    @media(max-width: 768px){
+      .hero{ padding-top: 140px; min-height: 55vh; }
+      .blog-grid{ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    }
+      .overlay{
+    background:rgba(0,0,0,0.65);
+  }
+
+
+    @media(max-width: 480px){
+      .filters{ flex-direction: column; align-items: stretch; }
+      .search-box{ min-width: auto; }
+    }
+  </style>
+</head>
+<body>
+<!-- HERO -->
+<section class="hero">
+  <img src="ASSETS/Moringa-assembled.webp" alt="Crescendo Green Hero" class="hero-bg">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">🌱 Insights</div>
+    <h1>Ideas.<br> Systems.<br>Real Impact.</h1>
+    <p>Thoughts from the field, lessons from our work, and gentle wisdom on building beautiful, scalable restoration systems.</p>
+  </div>
+</section>
+
+<!-- FEATURED ARTICLE -->
+<section class="featured">
+  <div class="featured-content">
+    <div class="featured-image">
+      <img src="ASSETS/Malia-vonski.webp" alt="El Niño 2026 Kenya Tree Planting">
+    </div>
+    <div class="featured-text">
+      <div class="featured-meta">
+        <span><i class="fa-solid fa-cloud-rain"></i> Climate Systems</span>
+        <span><i class="fa-regular fa-clock"></i> 8 min read</span>
+      </div>
+      <h2>El Niño 2026: Why Kenya’s Tree-Planting Sector Should Prepare Now</h2>
+      <p>Climate agencies are increasingly confident that El Niño conditions are likely to develop in 2026. For Kenya’s tree-planting sector, this could be a beautiful opportunity — if we prepare with love and care.</p>
+      <a href="article-el-nino.html" class="read-btn">
+        Read Full Article 
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FILTERS -->
+<section class="filters">
+  <div class="categories" id="categoryFilters">
+    <button class="active" data-filter="all">All Articles</button>
+    <button data-filter="restoration">Restoration</button>
+    <button data-filter="propagation">Propagation</button>
+    <button data-filter="climate">Climate Systems</button>
+  </div>
+  <div class="search-box">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" id="searchInput" placeholder="Search articles...">
+  </div>
+</section>
+
+<!-- BLOG GRID -->
+<section class="blog-grid" id="blogGrid">
+
+  <!-- Card 1 -->
+  <a href="article1.html" class="blog-card" data-category="restoration" data-tags="failure planning">
+    <div class="blog-image">
+      <img src="ASSETS/Malia-vonski.webp" alt="Why Most Tree Planting Projects Fail">
+      <div class="image-badge">❤️ Popular</div>
+    </div>
+    <div class="blog-content">
+      <div class="blog-meta">
+        <span><i class="fa-solid fa-leaf"></i> Restoration</span>
+        <span><i class="fa-regular fa-clock"></i> 7 min read</span>
+      </div>
+      <h2>Why Most Tree Planting Projects Fail Before Planting Even Starts</h2>
+      <p>Many projects are already off-track before the first tree is planted. Let’s talk about how we can do better.</p>
+      
+      <div class="card-footer">
+        <button class="save-btn"><i class="fa-regular fa-bookmark"></i></button>
+        <span class="read-btn">Read Article <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </div>
+  </a>
+
+  <!-- Card 2 -->
+  <a href="article2.html" class="blog-card" data-category="propagation" data-tags="nursery scale">
+    <div class="blog-image">
+      <img src="ASSETS/inside-nursery.webp" alt="Centralised vs Community Nurseries">
+    </div>
+    <div class="blog-content">
+      <div class="blog-meta">
+        <span><i class="fa-solid fa-seedling"></i> Propagation</span>
+        <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+      </div>
+      <h2>Centralised vs Community Nurseries: Finding the Right Model for Scale</h2>
+      <p>A gentle comparison of nursery models and how hybrid systems can create more joy and better results.</p>
+      
+      <div class="card-footer">
+        <button class="save-btn" aria-label="Save article">
+          <i class="fa-regular fa-bookmark"></i>
+        </button>
+        <span class="read-btn">
+          Read Article <i class="fa-solid fa-arrow-right"></i>
+        </span>
+      </div>
+    </div>
+  </a>
+
+</section>
+
+<div id="footer"></div>
+<!-- Put this just before the closing </body> tag -->
+<div id="navbar-container"></div>
+
+<script>
+// Load Navbar
+fetch('navbar.html')
+  .then(response => {
+    if (!response.ok) throw new Error('Navbar not found');
+    return response.text();
+  })
+  .then(data => {
+    document.getElementById('navbar-container').innerHTML = data;
+    
+    // Important: Initialize scripts AFTER navbar is loaded
+    initializeMobileMenu();
+    initializeDropdowns();     // if needed
+  })
+  .catch(err => {
+    console.error('Error loading navbar:', err);
+  });
+</script>
+
+<!-- Your main.js or other scripts -->
+<script src="js/main.js"></script>
+<script>
+  // Load Footer
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+
+
+
+  // ================= BLOG INTERACTIVITY =================
+  const cards = document.querySelectorAll('.blog-card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 80);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  cards.forEach(card => observer.observe(card));
+
+  // Category Filtering
+  const filterBtns = document.querySelectorAll('#categoryFilters button');
+  const blogCards = document.querySelectorAll('.blog-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      blogCards.forEach(card => {
+        card.style.display = (filter === 'all' || card.getAttribute('data-category') === filter) ? 'block' : 'none';
+      });
+    });
+  });
+
+  // Live Search
+  const searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener('input', () => {
+    const term = searchInput.value.toLowerCase().trim();
+
+    blogCards.forEach(card => {
+      const title = card.querySelector('h2').textContent.toLowerCase();
+      const excerpt = card.querySelector('p').textContent.toLowerCase();
+      const tags = (card.getAttribute('data-tags') || "").toLowerCase();
+
+      card.style.display = (title.includes(term) || excerpt.includes(term) || tags.includes(term)) ? 'block' : 'none';
+    });
+  });
+
+  // Bookmark Functionality
+  document.querySelectorAll('.save-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      btn.classList.toggle('saved');
+    });
+  });
+</script>
+</body>
+</html>

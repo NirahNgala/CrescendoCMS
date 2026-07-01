@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koromi Melia Project | Crescendo Green</title>
+  
+  <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .case-hero {
+      background: linear-gradient(rgba(15,44,34,0.72), rgba(15,44,34,0.78)), 
+                  url('ASSETS/koromi-project.webp') center/cover no-repeat;
+      min-height: 520px;
+    }
+
+    .prose h1, .prose h2 {
+      color: #0f2c22;
+      font-weight: 700;
+    }
+
+    .highlight-box {
+      background: #f8fafc;
+      border-left: 5px solid #10b981;
+    }
+  </style>
+</head>
+<body class="font-sans">
+
+  <!-- HERO -->
+  <section class="case-hero py-28 md:py-32 relative">
+    <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+      <span class="inline-block px-6 py-2.5 bg-white/20 backdrop-blur-md text-white text-sm font-medium tracking-wider rounded-full mb-6 border border-white/30">
+        CASE STUDY
+      </span>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+        From Proof of Concept to Scalable Landscape Restoration
+      </h1>
+      <p class="mt-6 text-xl md:text-2xl text-white/90 font-light">
+        Lessons from the Koromi Melia Project
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6 prose prose-lg text-gray-700 leading-relaxed">
+
+      <p>One of the strongest foundations of Crescendo Green is the practical experience gained through our sister company's forestry operations at the Koromi project on the Kenyan coast. What started as an ambitious dryland forestry initiative has evolved into one of Kenya's largest privately established Melia volkensii plantations and an invaluable learning platform for commercial forestry, ecosystem restoration and carbon project development.</p>
+
+      <p>To date, more than 30,000 Melia volkensii trees have been established alongside over 30,000 additional indigenous trees representing more than 60 species. The project demonstrates that commercial timber production and biodiversity restoration can reinforce each other when designed as an integrated landscape.</p>
+
+      <div class="highlight-box p-8 my-12 rounded-2xl">
+        <p class="mb-0">Importantly, the project has not only been about successes—it has been about learning. Like many pioneering forestry initiatives, we encountered challenges and adapted our practices based on field observations and continuous monitoring.</p>
+      </div>
+
+      <p>We discovered that planting holes needed to be significantly larger than originally recommended to promote early root development and drought resilience. Larger nursery containers produced more robust seedlings with improved establishment rates, while timely spot weeding during the first years proved essential to reduce competition for moisture and nutrients. Wind exposure was another critical factor, highlighting the importance of protection measures during the establishment phase.</p>
+
+      <p>In parallel, our nursery programme faced the unique challenges of propagating Melia volkensii, a species widely recognised for its complexity in seed handling and early-stage growth. Through close collaboration with forestry experts, including support from KEFRI and the JICA-supported SFS-CORECC initiative, we refined our propagation protocols and progressively mastered the production of healthy, vigorous seedlings suitable for large-scale planting.</p>
+
+      <p>The Koromi project has also become a living laboratory for innovation. Trials have explored mixed-species planting systems, drought-adapted forestry models, rainwater harvesting, soil improvement strategies, and the integration of indigenous species into productive landscapes. These experiences are directly informing our work in agroforestry and ecosystem restoration across East Africa.</p>
+
+      <p>Looking ahead, we are developing a dedicated Melia volkensii seed orchard to strengthen the availability and genetic quality of planting material for future projects. Combined with the expansion of our professional propagation capacity in Mtwapa, this positions Crescendo Green to support increasingly ambitious restoration and commercial forestry programmes.</p>
+
+      <p>Today, the lessons learned at Koromi underpin our vision for landscape-scale, carbon-ready initiatives that combine commercial forestry, agroforestry and ecosystem restoration. The knowledge gained through years of practical implementation enables us to advise clients with confidence, avoid common pitfalls and design systems that are technically robust, operationally realistic and tailored to Africa's dryland environments.</p>
+
+      <p>For our clients, the value of Koromi lies not only in the number of trees planted, but in the experience accumulated—experience that helps transform ambitious planting targets into resilient, high-performing landscapes.</p>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('footer').innerHTML = data);
+  </script>
+</body>
+</html>

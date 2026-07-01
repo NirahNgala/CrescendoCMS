@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services - Crescendo Green</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary: #2e7d32;
+      --dark: #1e3a2f;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Satoshi', sans-serif;
+      line-height: 1.7;
+      color: #333;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ==================== NAVBAR ==================== */
+/* Ensure mobile menu slides correctly */
+#mobile-menu {
+  transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.hamburger {
+  width: 32px;
+  height: 26px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 100%;
+  background: #183126;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Menu */
+#mobile-menu {
+  transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+}
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      border-bottom: 1px solid #e5e7eb;
+      transition: all 0.4s ease;
+    }
+
+    .navbar.scrolled {
+      background: rgba(255, 255, 255, 0.99);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 5%;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo img {
+      height: 60px;
+      width: auto;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 42px;
+      font-weight: 500;
+      color: #2e3f38;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: var(--primary);
+    }
+
+    .nav-menu a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.35s ease;
+    }
+
+    .nav-menu a:hover::after,
+    .nav-menu a.active::after {
+      width: 100%;
+    }
+
+
+/* Dropdown */
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  padding: 12px 0;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 10;
+  margin-top: 10px;
+}
+
+.nav-dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  margin-top: 0;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 24px;
+  color: #374151;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+  background: #f1f5f3;
+  color: var(--primary, #2e7d32);
+}
+
+/* CTA Button */
+    .nav-cta-btn {
+      background: var(--primary);
+      color: white;
+      padding: 13px 26px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.4s ease;
+    }
+
+    .nav-cta-btn:hover {
+      background: #1f5f24;
+      transform: translateY(-3px);
+    }
+
+    .hamburger {
+  width: 32px;
+  height: 24px;
+      display: none;
+  flex-direction: column;
+  justify-content: space-between;
+      cursor: pointer;
+      color: #183126;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+  
+/* Mobile Active Style */
+#mobile-menu a.active {
+  color: var(--primary, #2e7d32);
+  font-weight: 700;
+  position: relative;
+}
+
+#mobile-menu a.active::before {
+  content: "";
+  margin-right: 8px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  .nav-cta-btn {
+    display: none;
+  }
+}
+
+
+    /* ====================== SERVICE ROWS ====================== */
+    .service-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 680px;
+      margin-bottom: 100px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.9s ease;
+    }
+
+    .service-row.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .service-row.reverse .service-image { order: 2; }
+
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.3s ease;
+    }
+
+    .service-row:hover .service-image img {
+      transform: scale(1.05);
+    }
+
+    .service-content {
+      padding: 80px 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    }
+
+    .service-content h3 {
+      font-size: 2.35rem;
+      margin-bottom: 24px;
+      color: var(--dark);
+      line-height: 1.1;
+    }
+
+    .service-content p {
+      font-size: 1.08rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .tags span {
+      border: 1px solid #c9d3cb;
+      color: var(--primary);
+      padding: 10px 18px;
+      border-radius: 50px;
+      font-size: 0.92rem;
+      transition: 0.35s;
+    }
+
+    .tags span:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Projects Section */
+    .projects-section {
+      background: #f5f7f6;
+      padding: 110px 0;
+    }
+
+    .projects-section h2 {
+      text-align: center;
+      font-size: 2.65rem;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 32px;
+    }
+
+    .project-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+      height: 420px;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.18);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .project-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .project-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 45px 30px 30px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      color: white;
+    }
+
+.project-overlay h3 {
+  font-size: 1.55rem;
+  margin-bottom: 10px;
+}
+
+.project-overlay p {
+  font-size: 0.97rem;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+/* Mobile Adjustments */
+    @media (max-width: 768px) {
+  .project-card {
+    height: 360px;
+  }
+  
+  .project-overlay {
+    padding: 35px 25px 25px;
+  }
+  
+  .project-overlay h3 {
+    font-size: 1.45rem;
+  }
+  
+  .project-overlay p {
+    font-size: 0.95rem;
+  }
+}
+    /* ==================== FLOATING CTA ==================== */
+    .floating-cta {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--primary);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(46,125,50,0.3);
+      z-index: 999;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+
+    .floating-cta:hover {
+      transform: scale(1.08);
+      box-shadow: 0 15px 35px rgba(38, 96, 41, 0.4);
+    }
+
+   /* ==================== PROJECT MODAL ==================== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 3000;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.modal-content {
+  background: white;
+  max-width: 780px;
+  width: 100%;
+  border-radius: 24px;
+  padding: 50px 45px;
+  position: relative;
+  max-height: 92vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+}
+
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 25px;
+  font-size: 2.2rem;
+  cursor: pointer;
+  color: #666;
+  line-height: 1;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+.modal h3 {
+  font-size: 2.1rem;
+  color: var(--dark);
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 40px 25px;
+    border-radius: 20px;
+    max-height: 95vh;
+  }
+  
+  .modal h3 {
+    font-size: 1.75rem;
+  }
+  
+  .modal p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+}
+/* ==================== MOBILE ==================== */
+@media (max-width: 768px) {
+
+  /* Mobile Menu */
+  .nav-menu {
+    position: fixed;
+    top: 90px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 90px);
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    transition: left 0.4s ease;
+    z-index: 999;
+    transform: none;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .hamburger {
+    display: flex;
+    z-index: 1001;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  /* Services */
+  .service-row,
+  .service-row.reverse {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        margin-bottom: 60px;
+      }
+
+  .service-image {
+    height: 320px;
+  }
+
+  .service-content {
+    padding: 50px 24px;
+  }
+
+  .service-content h3 {
+    font-size: 2rem;
+  }
+
+  /* Projects */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-card img {
+    height: 260px;
+  }
+
+  /* Floating CTA */
+  .floating-cta {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  /* Footer */
+  #footer {
+    margin-top: 40px;
+  }
+
+  footer {
+    padding: 40px 20px 25px !important;
+  }
+}
+
+    @media (max-width: 768px) {
+      .service-image {
+        height: 320px;
+      }
+
+      .service-content {
+        padding: 50px 24px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .project-card img {
+        height: 360px;
+      }
+
+      /* Floating CTA - Smaller on Mobile */
+      .floating-cta {
+        padding: 10px 16px;
+        font-size: 0.95rem;
+        bottom: 16px;
+        right: 16px;
+        gap: 6px;
+      }
+
+      /* Footer - Compact on Mobile */
+      #footer {
+        margin-top: 40px;
+      }
+
+      footer {
+        padding: 40px 20px 25px !important;
+        font-size: 0.95rem;
+      }
+
+      footer h3, 
+      footer h4 {
+        font-size: 1.15rem;
+        margin-bottom: 15px;
+      }
+
+      footer img {
+        height: 48px;
+      }
+    }
+
+    /* Hamburger Animation */
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <img src="ASSETS/Crescendologo.png" alt="Crescendo Green">
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="nav-menu hidden md:flex">
+      <!-- About Dropdown -->
+      <div class="nav-dropdown">
+        <button class="dropdown-toggle">About <i class="fa-solid fa-chevron-down text-xs"></i></button>
+        <div class="dropdown-content">
+          <a href="about.html">Our Story</a>
+          <a href="about.html#team">Our Team</a>
+          <a href="FAQ.html">FAQs</a>
+          <a href="#kenya-operations">Operations in Kenya</a>
+          <a href="#partners">Partners</a>
+        </div>
+      </div>
+
+      <a href="services.html" class="active">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="projects.html">Projects</a>
+      <a href="blog.html">Blog</a>
+
+      <!-- Impact Dropdown -->
+      <div class="group relative">
+        <button class="nav-link flex items-center gap-1 hover:text-emerald-700 transition">
+          Impact
+          <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+        </button>
+        <div class="dropdown-menu absolute hidden group-hover:block pt-4">
+          <div class="bg-white shadow-xl rounded-2xl py-4 w-56 border border-emerald-100">
+            <a href="about.html#stats" class="block px-6 py-3 hover:bg-emerald-50">Our Impact</a>
+            <a href="services.html#project" class="block px-6 py-3 hover:bg-emerald-50">Featured Projects</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="contact.html" class="nav-cta-btn hidden md:block">Start a Project With Us</a>
+
+    <!-- Hamburger -->
+    <div class="hamburger md:hidden" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ====================== MOBILE MENU ====================== -->
+<div id="mobile-menu" class="fixed top-0 right-0 h-screen w-72 bg-white shadow-2xl translate-x-full transition-transform duration-300 md:hidden z-[9999] overflow-y-auto">
+  <div class="flex flex-col h-full">
+    <!-- Mobile Header -->
+    <div class="flex justify-end items-center px-6 pt-6 pb-4 border-b">
+      <button id="close-menu" class="text-3xl text-emerald-900 hover:text-emerald-700 transition">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Menu Links -->
+    <div class="flex-1 overflow-y-auto px-6 py-8 space-y-2 text-lg font-semibold">
+      <div class="mobile-dropdown">
+        <button class="w-full flex justify-between items-center py-3 text-left font-semibold">About <i class="fa-solid fa-chevron-down"></i></button>
+        <div class="mobile-dropdown-content hidden pl-6 space-y-3 text-base mt-2">
+          <a href="about.html">- Our Story</a>
+          <a href="about.html#team">- Our Team</a>
+          <a href="FAQ.html">- FAQs</a>
+          <a href="#kenya-operations">- Operations in Kenya</a>
+          <a href="#partners">- Partners</a>
+        </div>
+      </div>
+
+      <a href="services.html" class="block py-3">Services</a>
+      <a href="gallery.html" class="block py-3">Gallery</a>
+      <a href="projects.html" class="block py-3">Projects</a>
+      <a href="blog.html" class="block py-3">Blog</a>
+
+      <div class="mobile-dropdown">
+        <button class="w-full flex justify-between items-center py-3 text-left">Impact <i class="fa-solid fa-chevron-down text-sm"></i></button>
+        <div class="mobile-dropdown-content hidden pl-6 space-y-3 text-base mt-2">
+          <a href="about.html#stats">- Our Impact</a>
+          <a href="projects.html">- Featured Projects</a>
+        </div>
+      </div>
+
+      <a href="contact.html" class="block py-3">Contact</a>
+    </div>
+  </div>
+</div>
+
+
+ <!-- SERVICES -->
+<section class="services-hero">
+  <div class="container">
+    
+    <!-- Service 1 -->
+    <div class="service-row" id="High-quality-seedlings">
+      <div class="service-image">
+        <img src="ASSETS/Moringa seedlings packed in crates.webp" alt="High Quality Tree Seedlings">
+      </div>
+      <div class="service-content">
+        <h3>High-Quality Tree Seedlings</h3>
+        <p class="service-desc">At Crescendo Green, we believe that successful tree planting starts with exceptional planting material. We produce healthy, climate-resilient tree seedlings for commercial forestry, agroforestry, ecosystem restoration, biodiversity conservation, landscaping and agricultural value chains. Our propagation systems are designed to maximise root development, reduce transplant shock and achieve high survival rates under field conditions.</p>
+        
+        <p class="service-desc">Quality is embedded throughout our production process. We carefully select seed sources, use well-balanced growing media and appropriate container sizes, apply rigorous nursery hygiene protocols and implement structured hardening procedures before dispatch. Drawing on years of practical experience, we recognise that investments in larger, healthier seedlings often translate into better establishment, faster growth and lower replacement costs in the field.</p>
+        
+        <p class="service-desc">Our facilities are being developed to meet the highest professional standards, including compliance with Kenyan regulatory requirements such as KEPHIS certification where applicable. We also collaborate with research institutions and technical partners to continuously improve propagation techniques, particularly for indigenous and drought-tolerant species.</p>
+        
+        <p class="service-desc">Beyond production, we advise clients on species selection, nursery planning and planting strategies tailored to local rainfall, soils and project objectives. Whether supplying indigenous trees for restoration, Melia volkensii for commercial forestry or crop trees such as moringa and cashew, our goal is to deliver planting material that performs reliably and supports long-term project success.</p>
+        
+        <div class="tags">
+          <span>Indigenous Species</span>
+          <span>Melia volkensii</span>
+          <span>Moringa</span>
+          <span>Climate Resilient</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="service-row reverse" id="consultancy">
+      <div class="service-image">
+        <img src="ASSETS/Consultancy.jpeg" alt="Consultancy">
+      </div>
+      <div class="service-content">
+        <h3>Consultancy & Management</h3>
+        <p class="service-desc">Crescendo Green provides strategic consultancy and management services for forestry, agroforestry, ecosystem restoration and sustainable land-use initiatives across Africa. Our advice combines technical expertise with practical field experience, enabling clients to move from concept to implementation with confidence.</p>
+        
+        <p class="service-desc">We support organisations throughout the project lifecycle, including feasibility studies, species selection, nursery planning, restoration strategies, operational design and implementation planning. Our team also assists with value chain development for timber and tree crops, helping clients identify opportunities in production, processing, marketing and market access while strengthening commercial viability.</p>
+        
+        <p class="service-desc">For organisations requiring additional capacity, we offer project management and operational coordination services. This may include procurement support, contractor supervision, staff training, budgeting, work planning and stakeholder engagement. Through our network of experienced affiliate specialists and strategic partners, we can assemble multidisciplinary teams tailored to specific project requirements.</p>
+        
+        <p class="service-desc">Our consultancy is particularly relevant for carbon developers, NGOs, governments and private investors seeking technically sound and operationally realistic solutions. By combining strategic thinking with lessons learned from large-scale propagation and field implementation, Crescendo Green helps clients reduce risk, improve efficiency and create resilient forestry and restoration programmes with lasting environmental and economic impact.</p>
+        
+        <div class="tags">
+          <span>Project Design</span>
+          <span>Feasibility Studies</span>
+          <span>Value Chain Development</span>
+          <span>Strategic Planning</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="service-row" id="monitoring-operations">
+      <div class="service-image">
+        <img src="ASSETS/Monitoring&Operations.jpeg" alt="Monitoring and Operations">
+      </div>
+      <div class="service-content">
+        <h3>Monitoring & Operations</h3>
+        <p class="service-desc">Delivering successful forestry and restoration projects requires more than planting trees—it demands disciplined implementation, continuous monitoring and adaptive management. Crescendo Green supports clients through every stage of project execution, from operational planning and field mobilisation to long-term supervision and performance monitoring.</p>
+        
+        <p class="service-desc">We provide outsourced operational support for organisations that require experienced teams to manage propagation, planting campaigns, outgrower programmes and restoration activities. Depending on client needs, our services can include field coordination, contractor management, quality assurance, survival assessments, growth monitoring, data collection and periodic reporting. We also assist with developing practical monitoring frameworks and key performance indicators to track implementation progress and inform adaptive management.</p>
+        
+        <p class="service-desc">Our experience in large-scale nursery operations and practical forestry enables us to identify challenges early and recommend timely corrective actions, helping clients improve survival rates, reduce costs and maximise long-term productivity. For carbon and restoration projects, robust monitoring systems also provide valuable evidence for reporting environmental outcomes and demonstrating responsible project management.</p>
+        
+        <p class="service-desc">Whether acting as a technical advisor, implementation partner or outsourced operations manager, Crescendo Green delivers reliable, transparent and results-oriented support. Our objective is simple: to help clients establish healthy, productive landscapes that generate measurable ecological, social and commercial value over the long term.</p>
+        
+        <div class="tags">
+          <span>Project Execution</span>
+          <span>Survival Monitoring</span>
+          <span>Adaptive Management</span>
+          <span>Carbon Projects</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 4 -->
+    <div class="service-row reverse" id="nursery-development">
+      <div class="service-image">
+        <img src="ASSETS/research.webp" alt="Tree Nursery Development">
+      </div>
+      <div class="service-content">
+        <h3>Tree Nursery Development</h3>
+        <p class="service-desc">Crescendo Green provides end-to-end support for the planning, construction and operation of professional tree nurseries across Africa. Whether you require a turnkey solution or targeted technical assistance, we help clients establish efficient, scalable and cost-effective propagation facilities tailored to their objectives.</p>
+        
+        <p class="service-desc">Our services include nursery design, procurement of high-quality materials and equipment, irrigation systems, shade structures, logistics, integrated pest and disease management, substrate development and operational workflows. We also train nursery staff and management teams, ensuring long-term capacity through structured knowledge transfer.</p>
+        
+        <p class="service-desc">Through our partnership with Growpact Global and our own practical experience in large-scale propagation, we bring proven expertise to every project. Beyond nursery operations, we advise on species selection, seed sourcing, production planning, value chains, processing and market opportunities, enabling clients to build resilient and commercially viable forestry, restoration and agroforestry programmes.</p>
+        
+        <div class="tags">
+          <span>Nursery Design</span>
+          <span>Turnkey Solutions</span>
+          <span>Staff Training</span>
+          <span>Scalable Systems</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+ <!-- PROJECT SHOWCASE -->
+<section class="projects-section">
+  <div class="container">
+    <h2>Project Highlights</h2>
+    
+    <p style="text-align: center; max-width: 760px; margin: 0 auto 70px; font-size: 1.12rem; color: #555; line-height: 1.7;">
+      Discover our key programmes driving innovation in Kenya’s agriculture and forestry sectors. <br>
+      <b>Click on any project below to learn more.</b>
+    </p>
+
+    <div class="projects-grid">
+      <div class="project-card" onclick="showProjectModal(0)">
+        <img src="ASSETS/sarangib-cashew-633921_1920.jpg" alt="Cashew Innovations">
+        <div class="project-overlay">
+          <h3>Cashew Innovations</h3>
+          <p>High-density planting • Dwarf varieties • Advanced nursery &amp; soil technologies</p>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="showProjectModal(1)">
+        <img src="ASSETS/mangoes.jpg" alt="Value Chain Development">
+        <div class="project-overlay">
+          <h3>Value Chain Development</h3>
+          <p>Freeze-dried mango • Moringa oil • Bixa annatto • Market &amp; processing focus</p>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="showProjectModal(2)">
+        <img src="ASSETS/inside-nursery.webp" alt="Sustainable Production Inputs">
+        <div class="project-overlay">
+          <h3>Sustainable Production Inputs</h3>
+          <p>Biochar • Large-scale composting • Regenerative soil amendments</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT MODAL -->
+<div class="modal" id="projectModal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeProjectModal()">×</span>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta" onclick="openContactModal()">
+  <span>Start Your Project</span>
+  <span style="font-size: 1.4rem;">→</span>
+</div>
+
+<!-- CONTACT MODAL -->
+<div class="modal" id="contactModal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeContactModal()">×</span>
+    <h2>Ready to Grow?</h2>
+    <p>Let’s discuss your project goals. Our team is ready to support you from planning to successful execution.</p>
+    <a href="contact.html" class="nav-cta-btn" style="display: inline-block; margin-top: 20px;">
+      Book a Consultation
+    </a>
+  </div>
+</div>
+
+<div id="footer"></div>
+<script>
+  tailwind.config = {
+    content: [],
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Satoshi', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+  <script>
+// Load Footer
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer').innerHTML = data;
+  });
+
+// Animation Observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.service-row, .project-card').forEach(el => observer.observe(el));
+
+// Navbar Scroll Effect
+window.addEventListener('scroll', () => {
+  document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 80);
+});
+</script>
+<script>
+// Mobile Menu Functionality
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeMenu = document.getElementById('close-menu');
+
+function openMobileMenu() {
+  mobileMenu.classList.remove('translate-x-full');
+  mobileMenu.classList.add('translate-x-0');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMobileMenu() {
+  mobileMenu.classList.add('translate-x-full');
+  mobileMenu.classList.remove('translate-x-0');
+  document.body.style.overflow = 'visible';
+}
+
+// Open menu
+hamburger.addEventListener('click', openMobileMenu);
+
+// Close menu
+closeMenu.addEventListener('click', closeMobileMenu);
+
+// Close when clicking on a link
+document.querySelectorAll('#mobile-menu a').forEach(link => {
+  link.addEventListener('click', closeMobileMenu);
+});
+
+// Optional: Close menu when clicking outside
+mobileMenu.addEventListener('click', function(e) {
+  if (e.target === mobileMenu) closeMobileMenu();
+});
+</script>
+<script>
+// Project Data
+const projects = [
+  {
+    title: "Cashew Innovations",
+    content: `
+      <p>Kenya's cashew sector has enormous untapped potential, yet average yields remain far below those achieved in leading producing countries such as Brazil and Vietnam.</p>
+      <p>At Crescendo Green, we are working with research partners to introduce a new generation of innovations that can significantly improve productivity, resilience and profitability for growers.</p>
+      <p>Our programme focuses on the evaluation of <strong>dwarf and semi-dwarf cashew varieties</strong> that enable higher planting densities, easier harvesting and greater yields per hectare. In parallel, we are testing improved nursery techniques and advanced planting inputs including biochar, compost, and microbial technologies.</p>
+    `
+  },
+  {
+    title: "Value Chain Development",
+    content: `
+      <p>Increasing agricultural production only creates lasting impact when farmers have access to profitable markets and local value addition.</p>
+      <p>Current initiatives include research into freeze-dried mango products, cold-pressed moringa oil, and the development of the Bixa annatto value chain in partnership with KALRO.</p>
+      <p>Our long-term vision is to help transform Kenya from an exporter of raw commodities into a producer of high-value processed products.</p>
+      <p><strong>Over the past 10 years</strong>, we have conducted numerous value chain analyses across livestock, horticulture, drought-resistant crops, and agroforestry.</p>
+    `
+  },
+  {
+    title: "Sustainable Production Inputs",
+    content: `
+      <p>Healthy soils are the foundation of productive and climate-resilient agriculture.</p>
+      <p>We develop large-scale composting systems and invest in <strong>biochar production technologies</strong> that transform biomass into stable carbon-rich material.</p>
+      <p>These inputs are being evaluated across cashew, moringa, and indigenous tree species to increase productivity while reducing dependence on synthetic fertilizers.</p>
+      <p>By integrating circular economy principles with regenerative agriculture, we aim to create scalable solutions for sustainable landscape restoration.</p>
+    `
+  }
+];
+
+function showProjectModal(index) {
+  const modal = document.getElementById('projectModal');
+  const body = document.getElementById('modal-body');
+  
+  body.innerHTML = `
+    <h3>${projects[index].title}</h3>
+    ${projects[index].content}
+    <div style="margin-top: 40px; text-align: center;">
+      <a href="contact.html" class="nav-cta-btn" 
+         style="display: inline-block; width: 100%; max-width: 320px; padding: 18px 30px; font-size: 1.08rem; text-align: center;">
+        Discuss This Project With Us →
+      </a>
+    </div>
+  `;
+  
+  modal.style.display = "flex";
+}
+
+function closeProjectModal() {
+  document.getElementById('projectModal').style.display = "none";
+}
+
+// Close modal when clicking outside
+document.getElementById('projectModal').addEventListener('click', function(e) {
+  if (e.target === this) closeProjectModal();
+});
+</script>
+<script>
+// Mobile Menu Functionality
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeMenu = document.getElementById('close-menu');
+
+function openMobileMenu() {
+  mobileMenu.classList.remove('translate-x-full');
+  mobileMenu.classList.add('translate-x-0');
+  hamburger.classList.add('active');           // ← This was missing
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMobileMenu() {
+  mobileMenu.classList.add('translate-x-full');
+  mobileMenu.classList.remove('translate-x-0');
+  hamburger.classList.remove('active');        // ← Reset animation
+  document.body.style.overflow = 'visible';
+}
+
+hamburger.addEventListener('click', openMobileMenu);
+closeMenu.addEventListener('click', closeMobileMenu);
+
+// Close when clicking on links
+document.querySelectorAll('#mobile-menu a').forEach(link => {
+  link.addEventListener('click', closeMobileMenu);
+});
+
+// Close when clicking outside the menu
+mobileMenu.addEventListener('click', function(e) {
+  if (e.target === mobileMenu) closeMobileMenu();
+});
+</script>
+</body>
+</html>
