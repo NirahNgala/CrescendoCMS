@@ -472,7 +472,51 @@ section {
   70%  { box-shadow: 0 0 0 25px rgba(16, 185, 129, 0); }
   100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
+/* Make all slides consistent */
+.slide {
+  min-width: 100%;
+  scroll-snap-align: center;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(15, 42, 31, 0.18);
+}
 
+/* Unified wrappers */
+.video-wrapper,
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;           /* Force same ratio */
+  background: #000;
+}
+
+.video-wrapper img,
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Video specific */
+.video-wrapper video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hide poster when video plays */
+.video-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  transition: opacity 0.6s ease;
+}
 /* ====================== CLIENTS SECTION ====================== */
 .clients {
   padding: 100px 20px;
